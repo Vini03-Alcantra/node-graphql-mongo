@@ -2,6 +2,7 @@ import "reflect-metadata";
 import path from "path"
 import {ApolloServer} from "apollo-server"
 import {buildSchema} from "type-graphql"
+import "dotenv/config"
 import {UserResolve} from "./resolvers/UserResolver"
 
 async function main(){
