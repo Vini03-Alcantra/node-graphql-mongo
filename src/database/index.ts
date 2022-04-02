@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-const URL_CONNECT = process.env.URL_MONGODB!
+const URL_CONNECT = process.env.URL_MONGODB!;
 
 mongoose.connect(URL_CONNECT)
     .then(() => {

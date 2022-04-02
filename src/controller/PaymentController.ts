@@ -7,7 +7,7 @@ interface ICreatePayment {
     prize: number;
 }
 
-class PaymentController {
+class PaymentController {    
     async create({
         name,
         cpf,

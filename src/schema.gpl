@@ -3,8 +3,23 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+"""
+The javascript `Date` as string. Type represents date and time as the ISO Date string.
+"""
+scalar DateTime
+
 type Mutation {
-  createUser(name: String!): User!
+  createPayment(cpf: String!, name: String!, prize: Float!, product: String!): Payment!
+}
+
+type Payment {
+  _id: String!
+  cpf: String!
+  createdAt: DateTime!
+  name: String!
+  prize: Float!
+  product: String!
+  updatedAt: DateTime!
 }
 
 type Query {

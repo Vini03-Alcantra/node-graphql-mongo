@@ -1,9 +1,10 @@
-import {Field, ID, ObjectType} from "type-graphql"
+import {Field, ID, ObjectType} from "type-graphql";
+import {IPayment} from "../database/schemas/Payment"
 
 @ObjectType()
-class Payment {
+class Payment implements IPayment{
     @Field()
-    _id: any;
+    _id: string;
 
     @Field()
     name: string

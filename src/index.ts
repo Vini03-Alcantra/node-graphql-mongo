@@ -1,14 +1,15 @@
 import "dotenv/config"
 import "reflect-metadata";
+import  "./database"
 import path from "path"
 import {ApolloServer} from "apollo-server"
 import {buildSchema} from "type-graphql"
-import {UserResolve} from "./resolvers/UserResolver"
+import {PaymentResolve} from "./resolvers/PaymentResolver"
 
 async function main(){
     const schema = await buildSchema({
         resolvers: [
-            UserResolve
+            PaymentResolve
         ],
         emitSchemaFile: path.resolve(__dirname, 'schema.gpl')
     })

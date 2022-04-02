@@ -1,6 +1,6 @@
-import {mongoose} from "../index"
+import mongoose, { Schema, Document } from 'mongoose';
 
-export interface IPayment {
+export interface IPayment  {
     id?: string,
     name: string,
     cpf: string,
@@ -10,7 +10,7 @@ export interface IPayment {
     updatedAt?: Date
 }
 
-const PaymentSchema = new mongoose.Schema<IPayment>(
+const PaymentSchema = new Schema<IPayment>(
     {
         name: {
             type: String,
@@ -41,6 +41,6 @@ const PaymentSchema = new mongoose.Schema<IPayment>(
     }
 )
 
-const Payment = mongoose.model<IPayment>('Payment', PaymentSchema)
+const Payment = mongoose.model('Payment', PaymentSchema)
 
 export {Payment}

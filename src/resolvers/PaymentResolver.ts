@@ -1,9 +1,10 @@
 import {Arg, Mutation, Query, Resolver} from "type-graphql";
-import crypto from "crypto"
 import {User} from "../models/User"
 import {PaymentController} from "../controller/PaymentController"
+import {Payment} from "../schemas/Payment";
+
 @Resolver()
-export class UserResolve {
+export class PaymentResolve {
     private data: User[] = [];
     paymentController = new PaymentController()
     
@@ -12,8 +13,8 @@ export class UserResolve {
         return this.data
     }
 
-    @Mutation(() => User)
-    async createUser(
+    @Mutation(() => Payment)
+    async createPayment(
         @Arg('name') name: string,
         @Arg('cpf') cpf: string,
         @Arg('product') product: string,
