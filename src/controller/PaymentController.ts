@@ -23,6 +23,12 @@ class PaymentController {
 
         return payment
     }
+
+    async find(){
+        const payments = await Payment.find()
+
+        return payments
+    }
 }
 
 export {PaymentController}

@@ -23,10 +23,5 @@ type Payment {
 }
 
 type Query {
-  users: [User!]!
-}
-
-type User {
-  id: ID!
-  name: String!
+  payments: [Payment!]!
 }

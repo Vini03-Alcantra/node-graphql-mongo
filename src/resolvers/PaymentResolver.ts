@@ -4,13 +4,13 @@ import {PaymentController} from "../controller/PaymentController"
 import {Payment} from "../schemas/Payment";
 
 @Resolver()
-export class PaymentResolve {
-    private data: User[] = [];
+export class PaymentResolve {    
     paymentController = new PaymentController()
     
-    @Query(() => [User])
-    async users(){
-        return this.data
+    @Query(() => [Payment])
+    async payments(){
+        const payments = this.paymentController.find()
+        return payments
     }
 
     @Mutation(() => Payment)
