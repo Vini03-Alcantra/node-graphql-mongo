@@ -1,10 +1,12 @@
 import {Arg, Mutation, Query, Resolver} from "type-graphql";
 import crypto from "crypto"
 import {User} from "../models/User"
+import {PaymentController} from "../controller/PaymentController"
 @Resolver()
 export class UserResolve {
     private data: User[] = [];
-
+    paymentController = new PaymentController()
+    
     @Query(() => [User])
     async users(){
         return this.data
@@ -12,13 +14,14 @@ export class UserResolve {
 
     @Mutation(() => User)
     async createUser(
-        @Arg('name') name: string
+        @Arg('name') name: string,
+        @Arg('cpf') cpf: string,
+        @Arg('product') product: string,
+        @Arg('prize') prize: number
     ) {
-        const user = {id: crypto.randomUUID(), name}
+        const paymentCreated = this.paymentController.create({name, cpf, product, prize})    
 
-        this.data.push(user)
-
-        return user
+        return paymentCreated
     }
 }
 

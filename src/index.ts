@@ -3,7 +3,6 @@ import "reflect-metadata";
 import path from "path"
 import {ApolloServer} from "apollo-server"
 import {buildSchema} from "type-graphql"
-import {connectDB} from "./database/index"
 import {UserResolve} from "./resolvers/UserResolver"
 
 async function main(){
@@ -17,8 +16,6 @@ async function main(){
     const server = new ApolloServer({
         schema
     })
-
-    connectDB()
 
     const {url} = await server.listen()
 
