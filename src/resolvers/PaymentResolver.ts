@@ -1,5 +1,4 @@
 import {Arg, Mutation, Query, Resolver} from "type-graphql";
-import {User} from "../models/User"
 import {PaymentController} from "../controller/PaymentController"
 import {Payment} from "../schemas/Payment";
 
