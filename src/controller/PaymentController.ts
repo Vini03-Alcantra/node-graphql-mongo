@@ -29,6 +29,12 @@ class PaymentController {
 
         return payments
     }
+
+    async findByID(id: string){
+        const payment = await Payment.findById(id)        
+
+        return payment
+    }
 }
 
 export {PaymentController}

@@ -23,5 +23,6 @@ type Payment {
 }
 
 type Query {
+  paymentID: Payment!
   payments: [Payment!]!
 }

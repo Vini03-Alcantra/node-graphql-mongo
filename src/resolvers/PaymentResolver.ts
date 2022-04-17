@@ -12,6 +12,12 @@ export class PaymentResolve {
         return payments
     }
 
+    @Query(() => Payment)
+    async paymentID(id: string) {
+        const payment = this.paymentController.findByID(id)
+        return payment
+    }
+
     @Mutation(() => Payment)
     async createPayment(
         @Arg('name') name: string,
