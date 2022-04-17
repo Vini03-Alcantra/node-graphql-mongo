@@ -1,5 +1,5 @@
 {
-  "name": "graphql",
+  "name": "nodejs-graphql-mongodb",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
